@@ -11,6 +11,7 @@ void quicksort(int array[100],int i,int n){
       pivot=i; // settting pivot as the i_th element to start with 
       j=n; // setting j as the nth element 
       
+      while(i<j){
          while(array[i]<=array[pivot] && i<n) // while loop will have two conditions. 
          // if the i_th element is less than pivot element and less than total number of elements then increment i 
          i++;
@@ -25,7 +26,7 @@ void quicksort(int array[100],int i,int n){
             array[i]=array[j];
             array[j]=temp;
       }
-      
+      }
       // swapping pivot and j element 
       // main swapping 
       temp= array[pivot];

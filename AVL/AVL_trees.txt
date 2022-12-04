@@ -1,0 +1,39 @@
+- AVL trees are just BSTs with rotations to automatically balance themselves.
+- 
+- in order traversal is a prerequisite of rotation
+
+- How it gets printed?
+- inorder traversal left root right
+- preorder traversal root left right
+- post order  traversal left right root
+
+- In general, **the inorder traversal is equivalent to the postorder traversal if there are only left children**, and the inorder traversal is equivalent to the preorder traversal if there are only right children.
+- when we have to print elements in sorted manner then choose inorder traversal
+- kind of traversal is given in the question
+- right and left rotations are opposites and can be reversed
+- kind of questions: mundane on this, given this tree, tell me where is the rotation happening
+
+## Why AVL Tree?
+
+AVL tree controls the height of the binary search tree by not letting it to be skewed. The time taken for all operations in a binary search tree of height h is **O(h)**. However, it can be extended to **O(n)** if the BST becomes skewed (i.e. worst case). By limiting this height to log n, AVL tree imposes an upper bound on each operation to be **O(log n)** where n is the number of nodes.
+
+![Screenshot 2022-12-04 at 7.27.11 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9fc24248-bfbe-48dd-bb0c-7500c7119d7e/Screenshot_2022-12-04_at_7.27.11_PM.png)
+
+- balanced BST
+- balancing factor = height of left subtree - height of right subtree
+- balancing factor should be -1, 0, 1 to be balanced
+- AVL Property : Difference between the height of left and right child should be no more than 1.
+- A tree is right heavy if the right child is taller. And left heavy if left child is taller.
+- empty tree (which has a balance of 0 by definition),
+- we need to rotate and balance in cases of inserting and deleting
+- LEVEL 0 is bottom most level
+- To balance a tree which is initially unbalanced, you can start out at the **third lowest height** (we’re skipping the two bottommost levels because they will always satisfy the AVL property even if they’re right heavy or left heavy). Now, you could start balancing through rotations, and once all subtrees at height 3 are balanced, you could do the same for subtrees at height 4, and so on,
+proceeding upwards towards the root
+- Balancing AVL trees
+1. ROTATION 
+- Rotations let you change one BST to another equivalent BST, while preserving
+the search invariant. The search invariant is the restriction that every node to the left of a node n should be less than or equal to n, and every node to the right of n should be greater.
+- only three nodes are considered during rotation
+- Right rotations take the tree from the root + left child scenario to the root + right child scenario.
+Left rotations do the opposite.
+![Screenshot 2022-12-04 at 7.54.57 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/317b46f4-dbcb-4951-9c98-1e546ad388d2/Screenshot_2022-12-04_at_7.54.57_PM.png)
